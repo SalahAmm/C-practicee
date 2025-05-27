@@ -3,26 +3,38 @@
 #include <cmath>
 #include <ctime>
 
-double getTotal(double prices[], int size);
+int search(int number[] , int size , int element);
 
 int main () {   
 
-    double prices[] = {43 , 234 , 234 ,1213}; 
-    int size = sizeof(prices)/sizeof(prices[0]);
-    double total = getTotal(prices , size);
-
-    std::cout << "$ " << total ;
-
-
-
-return 0;
-}
+    int number[] = {1, 2 , 3, 4};
+    int size = sizeof(number)/sizeof(int);
+    int index;
+    int myNum;
     
-double getTotal(double prices[], int size) {
-    int total = 0;
+    std::cout << "Enter a number to search for: ";
+    std::cin >> myNum;
+
+    index = search(number , size , myNum);
+
+    if (index != -1) {
+        std::cout << "The number at the index: " << index;
+
+    }
+    else {
+        std::cout << "The number doesn't exsist !!!!";
+    }
+    return 0;
+}
+int search(int number[] , int size , int element){
 
     for (int i = 0 ; i < size ; i++) {
-    total += prices[i];        
+        if (number[i] == element) {
+            return i;
+        }
+
     }
-    return total;
+
+    return -1;
 }
+    
