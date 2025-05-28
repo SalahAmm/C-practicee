@@ -4,30 +4,38 @@
 #include <ctime>
 
 
-int main () {   
+    class Human {
+        public:
+            std::string name;
+            std::string occupation;
+            int age;
 
-    std::string food[10];
-    int size = sizeof(food)/sizeof(food[0]);
+            void eat() {
+                std::cout << "Eating";
+            }
+            void drink() {
+                std::cout<< "Drinking";
+            }
 
-    std::string temp;
+            Human(std::string name , std::string occupation, int age) {
+                this->name = name;
+                this->occupation = occupation;
+                this->age = age;
 
-    for (int i = 0 ; i < size ; i++) {
-        std::cout << "Enter the food #" << i+1 << " or press 'q' to exit: ";
-        std::getline(std::cin , temp);
-        if (temp == "q") {
-            break;
-        }
-        else {
-            food[i] = temp;
-        }
-    }
+            }
+    };
+    
+    int main () {   
 
-   for (int i = 0 ; !food[i].empty() ; i++) {
-        std::cout << food[i] << '\n';
-   }
+        Human salah("salah", "single", 22);
+
+     
+        std::cout << salah.name << '\n';
+        std::cout << salah.occupation << '\n';
+        std::cout << salah.age << '\n';
 
     return 0;
-}
+};
 
     
 
