@@ -21,7 +21,7 @@ int a , b , max;
     
     maxu(&a ,&b ,&max);
     
-    printf("The max number is: %d" , max);
+    printf("The max number is: %d" , max); 
 
     return 0;
 }
