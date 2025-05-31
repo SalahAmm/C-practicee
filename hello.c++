@@ -22,6 +22,7 @@
                 this->occupation = occupation;
                 this->age = age;
 
+
             }
     };
     
