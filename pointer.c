@@ -3,19 +3,17 @@
 
 int main () {
 
+
     int N;
     int *P = &N;
     
     printf("Enter a Number: ");
     scanf("%d" , P);
-
-    if (*P % 2 == 0 ) {
-        printf("The number is EVEN");
+    for (int i = 1 ; i <= 18 ; i++ ) {
+        if (*P % i == 0) {
+            printf("%d\n", i);
+        }
     }
-    else {
-        printf("the number is ODD");
-    }
-    
 
 
 
