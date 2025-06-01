@@ -4,35 +4,44 @@
 
 int main () {
 
-    int T[100];
-    int N , X;
-    int *P1 , *P2;
+    int A[100] , B[100];
+    int N , M;
+    int *PA , *PB;
     int temp;
-    P1 = T ;
+    PA = A ;
 
-    printf("Enter the size of the array: ");
+    printf("Enter the size of the array A : ");
     scanf("%d" , &N);
 
     printf("Enter the element in the array: \n");
-    for ( P1 = T ; P1 < N + T ; P1++) {
-        printf("T[%d]: ", P1 - T);
-        scanf("%d" , P1);
+    for ( PA = A ; PA < N + A ; PA++) {
+        printf("A[%d]: ", PA - A);
+        scanf("%d" , PA);
+
     }
 
-    printf("Original Array: \n");
-    for ( P1 = T ; P1 < N + T ; P1++) {
-        printf("|%d|", *P1);
+    PB = B;
+    printf("Enter the size of the array B : ");
+    scanf("%d" , &M);
+
+
+    printf("Enter the element in the array B: \n");
+    for ( PB = B ; PB < M + B ; PB++) {
+        printf("B[%d]: ", PB - B);
+        scanf("%d" , PB);
     }
 
-    for (P1 = T , P2 = T+N-1 ; P1 < P2 ; P1++ , P2--){
-        temp = *P1;
-        *P1 = *P2;
-        *P2 = temp;
-    }
 
-    printf("The Reversed Array: ");
-    for (P1 = T ; P1 < T + N ; P1++) {
-        printf("|%d|" , *P1);
+    
+
+   for ( PA = A + N , PB = B ; PB < B + M ; PB++ , PA++ ) {
+    *PA = *PB;
+   } 
+   N = N + M;
+
+    printf("The Merged Array: ");
+    for (PA = A ; PA < A + N ; PA++) {
+        printf("|%d|" , *PA);
     }
 
 
