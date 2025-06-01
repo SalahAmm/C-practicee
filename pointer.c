@@ -5,7 +5,7 @@
 int main () {
 
     int A[100] , B[100];
-    int N , M;
+    int N ;
     int *PA , *PB;
     int temp;
     PA = A ;
@@ -20,26 +20,19 @@ int main () {
 
     }
 
-    PB = B;
-    printf("Enter the size of the array B : ");
-    scanf("%d" , &M);
-
-
-    printf("Enter the element in the array B: \n");
-    for ( PB = B ; PB < M + B ; PB++) {
-        printf("B[%d]: ", PB - B);
-        scanf("%d" , PB);
-    }
-
 
     
+    for ( PA = A ; PA < N + A-1 ; PA++) {
+        for (PB =PA+1 ; PB < A + N ; PB++) {
+            if ( *PA > *PB ) {
+                temp = *PA;
+                *PA = *PB;
+                *PB = temp;
+            }
+        }
+    } 
 
-   for ( PA = A + N , PB = B ; PB < B + M ; PB++ , PA++ ) {
-    *PA = *PB;
-   } 
-   N = N + M;
-
-    printf("The Merged Array: ");
+    printf("Array sorted from small to large:  ");
     for (PA = A ; PA < A + N ; PA++) {
         printf("|%d|" , *PA);
     }
