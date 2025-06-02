@@ -5,16 +5,33 @@
 
 int main () {
 
-    int *P1 ,*P2 , *P3;
-    P1 = malloc(100);
-    printf("Allocate 100 bits in %p\n" , P1);
-    P2 = malloc(50);
-    printf("Allocate 100 bits in %p\n" , P2);
-    free(P1);
-    printf("free 100 bits in %p\n" , P1);
-    P3 = malloc(40);
-    printf("Allocate 100 bits in %p\n" , P3);
-    
+  int n,i;
+  int *T = calloc(n , sizeof(float));
+  float S , M; 
+  
+  printf("Enter the size of the array: ");
+  scanf("%d", &n);
+
+  if (T == NULL) {
+    printf("The memory is Full ");
+    exit(0);
+
+  }
+  else {
+    printf("Enter the element of the array: \n");
+    for ( i = 0 ; i < n ; i++) {
+        printf("T[%d]: ", i+1);
+        scanf("%d", (T+i));
+
+    }
+    S = 0;
+    for ( i = 0 ; i < n ; i++) {
+        S = S + *(T+i);
+    }
+    M = S / n;
+    printf("the sum of the array : [%.2f]\n" , S);
+    printf("The Median of the array is : [%.2f]\n" , M);
+  }
 
     return 0;
 }
